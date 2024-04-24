@@ -1,0 +1,38 @@
+/*設定一個漸層底色，而星星是用CSS的animation動畫來實現的。*/
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #160930 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/*設定星星的樣式*/
+.star {
+    position: absolute;
+    /* 設定星星大小 */
+    width: min(0.25vw, 0.25vh);
+    height: min(0.25vw, 0.25vh);
+    background: #fff;
+    border-radius: 100%;
+    animation: twinkle 5s infinite;
+    box-shadow: 0 0 10px 1px #fff, 0 0 20px 2px #fff, 0 0 30px 3px #fff, 0 0 40px 4px #fff, 0 0 50px 5px #fff;
+}
+
+/*設定星星的閃爍動畫 最暗到最亮，再從最亮到最暗*/
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
